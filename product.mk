@@ -6,6 +6,10 @@
 
 EXTRA_PATH := vendor/extra
 
+# Overlay
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(EXTRA_PATH)/overlay
+PRODUCT_PACKAGE_OVERLAYS += $(EXTRA_PATH)/overlay
+
 # Google Apps
 ifeq ($(WITH_GMS), true)
 $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
